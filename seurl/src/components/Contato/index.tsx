@@ -1,9 +1,7 @@
 import style from './style.module.scss'
-import Titulo from '../Titulo'
-import Input from '../Input';
-import Botao from '../Botao';
+import { Titulo, Input, Botao } from '../index'
 
-function contato() {
+export function Contato() {
     return (  
         <section className={style.contato}>
             <div>
@@ -42,5 +40,3 @@ function contato() {
         </section>
     );
 }
-
-export default contato;

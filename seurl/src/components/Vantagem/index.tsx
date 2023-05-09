@@ -1,8 +1,7 @@
 import style from './style.module.scss'
-import Titulo from '../Titulo'
-import Card from './Card'
+import { Titulo, Card } from '../'
 
-export default function vatagem() {
+export function Vantagem() {
     return (
         <section className={style.vantagem}>
             <Titulo 

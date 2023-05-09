@@ -1,27 +1,29 @@
 import style from './style.module.scss'
 
 interface Props {
-    text: string,
-    name: string,
-    type: string,
-    required?: boolean | undefined
+    text?: string,
+    name?: string,
+    type?: string,
+    required?: boolean | undefined,
+    value?: string
 }
 
-function input({
+export function Input({
     text,
     name,
     type,
-    required
+    required,
+    value
 }: Props) {
 
     return ( 
-        <input className={style.input}
+        <input 
+            className={style.input}
             placeholder={text}
             name={name}
             type={type}
             required={required}
+            value={value}
         />
     );
 }
-
-export default input;

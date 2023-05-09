@@ -2,7 +2,7 @@ import style from './style.module.scss'
 import { List, X } from "@phosphor-icons/react"
 import { useState } from 'react'
 
-export default function menu() {
+export function Menu() {
 
     const [btnState, setbtnState] = useState(false)
 

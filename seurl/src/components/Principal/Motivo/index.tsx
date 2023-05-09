@@ -1,7 +1,7 @@
-import { ArrowDown } from '@phosphor-icons/react'
 import style from './style.module.scss'
+import { ArrowDown } from '@phosphor-icons/react'
 
-export default function motivo() {
+export function Motivo() {
     return (
         <article className={style.motivo}>
             <img 

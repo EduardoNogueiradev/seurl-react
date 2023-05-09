@@ -1,7 +1,7 @@
 import style from './style.module.scss'
-import Titulo from '../Titulo/index';
+import { Titulo } from '../';
 
-function responsividade() {
+export function Responsividade() {
     return (  
         <section className={style.responsividade}>
             <Titulo
@@ -20,5 +20,3 @@ function responsividade() {
 
     );
 }
-
-export default responsividade;

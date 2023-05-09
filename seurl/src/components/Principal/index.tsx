@@ -1,11 +1,10 @@
-import Aplicacao from "../Aplicacao";
-import Motivo from './Motivo'
 import style from './style.module.scss'
+import { Aplicacao, Motivo } from '../'
 
-export default function principal() {
+export function Principal({api}: {api: any}) {
     return (
         <main className={style.principal}>
-            < Aplicacao/>
+            < Aplicacao api={api}/>
             < Motivo />
         </main>
     )

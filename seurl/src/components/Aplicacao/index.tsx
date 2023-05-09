@@ -1,29 +1,28 @@
 import style from './style.module.scss'
-import Botao from '../Botao';
-import Titulo from '../Titulo'
-import { Link, QrCode, List } from '@phosphor-icons/react'
-import { useState } from 'react';
+import { Botao, Titulo, Input } from '../'
+import { Link, QrCode, List, Copy } from '@phosphor-icons/react'
+import { FormEvent, useState } from 'react'
 
 interface IAba {
-    link: string,
+    url: string,
     qrCode: string,
     menu: string
 }
 
-export default function aplicacao() {
+export function Aplicacao({api}: {api: any}) {
     const press = style.abaIconPress
     const off = style.abaIcon
 
     const [ abaState, setAbaState ] = useState<IAba>({
-        link: press,
+        url: press,
         qrCode: off, 
         menu: off,
     });
     
-    function toggleClassLink() {
+    function toggleClassUrl() {
         const updateState = {...abaState}
 
-        updateState.link = press
+        updateState.url = press
         updateState.qrCode = off
         updateState.menu = off
 
@@ -33,7 +32,7 @@ export default function aplicacao() {
     function toggleClassQrCode() {
         const updateState = {...abaState}
 
-        updateState.link = off
+        updateState.url = off
         updateState.qrCode = press
         updateState.menu = off
 
@@ -43,18 +42,34 @@ export default function aplicacao() {
     function toggleClassMenu() {
         const updateState = {...abaState}
 
-        updateState.link = off
+        updateState.url = off
         updateState.qrCode = off
         updateState.menu = press
 
         setAbaState(updateState)
     }
-    console.log("renderizou")
+
+    const [ url, setUrl ] = useState('')
+    const [ consulta, setConsulta ] = useState('') 
+
+    async function createConsulta(event: FormEvent) {
+        event.preventDefault()
+
+        if ( url.length === 0) {
+            return
+        }
+
+        await api.post('createlink', {
+            url
+        }).then(Response => (
+            setConsulta(Response.data)
+        ))
+    }
     
     return (
             <section className={style.app}>
                 <div className={style.appAba}>
-                    <button onClick={toggleClassLink} className={abaState.link}>
+                    <button onClick={toggleClassUrl} className={abaState.url}>
                         < Link size={24} />
                     </button>
                     <button onClick={toggleClassQrCode} className={abaState.qrCode}>
@@ -64,7 +79,10 @@ export default function aplicacao() {
                         < List size={24} />
                     </button>
                 </div>
-                <form className={style.appForm} action="">
+                <form 
+                    onSubmit={createConsulta}
+                    className={style.appForm} 
+                >
                     < Titulo 
                         text="Encurte seu link"
                         fontSize='1.5rem'
@@ -80,11 +98,20 @@ export default function aplicacao() {
                             name="url" 
                             placeholder="Coloque seu link aqui" 
                             required
+                            onChange={event => setUrl(event.target.value)}
                         />
                         < Botao
                             type="submit"
                             text="Criar"
                         />
+                    </div>
+                    <div>
+                        <Input
+                            value={consulta}
+                        />
+                        <button type='button'>
+                            <Copy size={32}/>
+                        </button>
                     </div>
                 </form>
             </section>

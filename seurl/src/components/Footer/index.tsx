@@ -1,6 +1,6 @@
 import style from './style.module.scss'
 
-function footer() {
+export function Footer() {
     return (  
         <footer className={style.footer}>
             <img 
@@ -33,5 +33,3 @@ function footer() {
         </footer>
     );
 }
-
-export default footer;

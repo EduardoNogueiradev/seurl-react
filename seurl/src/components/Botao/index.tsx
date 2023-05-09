@@ -1,7 +1,7 @@
 import style from './style.module.scss'
 
 interface Props {
-    text: string,
+    text?: string,
     type?: "button" | "submit" | "reset" | undefined,
     background?: string,
     color?: string,
@@ -10,7 +10,7 @@ interface Props {
     
 }
 
-export default function botao({text, type, background, color, border, width}:Props) {
+export function Botao({text, type, background, color, border, width}:Props) {
 
     return (
         <button 

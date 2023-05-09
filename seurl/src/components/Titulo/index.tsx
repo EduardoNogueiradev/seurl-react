@@ -8,7 +8,7 @@ interface Props {
     position?: 'start' | 'end' | 'left' | 'right' | 'center' | 'justify' | 'match-parent'
 }
 
-export default function titulo(
+export function Titulo(
     {
         text,
         color,

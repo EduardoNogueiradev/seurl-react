@@ -7,7 +7,7 @@ interface Props {
     tag: string
 }
 
-export default function card({
+export function Card({
     title,
     text,
     tag

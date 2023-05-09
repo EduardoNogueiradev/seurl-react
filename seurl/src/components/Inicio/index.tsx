@@ -1,9 +1,7 @@
 import style from './style.module.scss'
-import Botao from '../Botao'
-import Titulo from '../Titulo'
+import { Botao, Titulo } from '../index'
 
-export default function inicio() {
-
+export function Inicio() {
     return(
         <section className={style.inicio}>
             <div className={style.inicioBox}>
