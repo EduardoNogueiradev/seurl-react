@@ -1,5 +1,5 @@
 import style from './style.module.scss'
-import { Botao, Titulo, Input } from '../'
+import { Botao, Titulo } from '../'
 import { Link, QrCode, List, Copy } from '@phosphor-icons/react'
 import { FormEvent, useState } from 'react'
 
@@ -49,6 +49,8 @@ export function Aplicacao({api}: {api: any}) {
         setAbaState(updateState)
     }
 
+    const [ text, setText ] = useState('')
+
     const [ url, setUrl ] = useState('')
     const [ consulta, setConsulta ] = useState('') 
 
@@ -65,7 +67,7 @@ export function Aplicacao({api}: {api: any}) {
             setConsulta(Response.data)
         ))
     }
-    
+
     return (
             <section className={style.app}>
                 <div className={style.appAba}>
@@ -101,18 +103,34 @@ export function Aplicacao({api}: {api: any}) {
                             onChange={event => setUrl(event.target.value)}
                         />
                         < Botao
+                            width={"16vw"}
                             type="submit"
                             text="Criar"
                         />
                     </div>
-                    <div>
-                        <Input
-                            value={consulta}
-                        />
-                        <button type='button'>
-                            <Copy size={32}/>
-                        </button>
-                    </div>
+                    { consulta.length == 0 ? '' :
+                    <>
+                        <p className={style.resultText}> Url encurtada!</p>
+                        <div className={style.formCont}>
+                            <input
+                                className={style.formInput}
+                                value={consulta}
+                            />
+                            <button 
+                                type='button' 
+                                className={style.formButton}
+                                onClick={ () => 
+                                    {
+                                        navigator.clipboard.writeText(consulta)
+                                        setText("copied")
+                                    }
+                                }
+                            >
+                                {text ? "Copiado!" : <Copy size={20}/>}
+                            </button>
+                        </div>
+                        </>
+                    }
                 </form>
             </section>
     )

@@ -7,7 +7,6 @@ interface Props {
     color?: string,
     border?: string,
     width?: string
-    
 }
 
 export function Botao({text, type, background, color, border, width}:Props) {
