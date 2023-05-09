@@ -1,0 +1,32 @@
+.responsividade {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 50px 16px;
+    box-sizing: border-box;
+    background: url(./img/resp-bg.png) no-repeat;
+}
+
+.responsividade h1 {
+    font-size: 20px;
+    color: #fff;
+    margin-bottom: 12px;
+}
+
+.responsividadeText {
+    color: #EDEDED;
+    margin-bottom: 28px;
+    width: 100%;
+    max-width: 370px;
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: 400;
+    text-align: center;
+}
+
+.responsividade img {
+    width: 70%;
+    max-width: 330px;
+}

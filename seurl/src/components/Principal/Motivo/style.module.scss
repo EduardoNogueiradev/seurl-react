@@ -1,0 +1,57 @@
+.motivo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: url(img/app-bg.png) no-repeat bottom;
+    background-size: 100vw 47vh;
+    padding: 0px 16px 50px 16px;
+}
+
+.motivoImagem{
+    width: 70%;
+    max-width: 330px;
+}
+
+.motivoCont {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 18px 14px;
+    background: #fff;
+    border-radius: 4px;
+}
+
+.motivoCont h1 {
+    font-size: 20px; 
+    margin-bottom: 12px;
+    font-weight: bold;
+    color: #373737;
+}
+
+.contRecursos {
+    display: flex;
+    align-items: center;
+    margin-top: 24px;
+    display: flex;
+    gap: 4px;
+}
+
+.contRecursos p {
+    color: #4E4E4E;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.motivoText {
+    text-align: center;
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: 400;
+    color: #707070;
+}
+
+.contIcon {
+    color: #4E4E4E;
+    font-size: 18px;
+}

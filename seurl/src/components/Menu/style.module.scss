@@ -1,0 +1,74 @@
+header {
+    height: 72px;
+}
+
+.menu {
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 72px;
+    width: calc(100vw - 32px);
+    padding: 0px 16px;
+    z-index: 1;
+    background: #fff;
+}
+
+.menuButton {
+    background: none;
+    border: none;
+}
+
+.logo a img {
+    width: 90px;
+}
+
+.menuIcon {
+    font-size: 2rem;
+    color: #000;
+}
+
+.menuIcon:hover {
+    cursor: pointer;
+}
+
+
+.menuIconHidden {
+    display: none;
+}
+
+.menuIconTransform {
+    display: flex;
+    transition: .2s linear;
+    transform: rotate(90deg);
+}
+
+
+.menuNav {
+    display: none;
+}
+
+.menuNavOn li {
+    font-size: 1rem;
+}
+
+.menuNavOn li:hover {
+    color: #4F52FF;
+    border-bottom: 1px solid #4F52FF;
+}
+
+.menuNavOn {
+    display: flex;
+    position: fixed;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    height: 225px;
+    width: 150px;
+    background: #fff;
+    right: 16px;
+    top: 80px;
+    border-radius: 4px;
+}
+
